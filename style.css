@@ -1,0 +1,411 @@
+/* FONT DECLARATIONS */
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+}
+a {
+    margin: 2rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.bodyInGame {
+    background-color: #34495E;
+}
+
+.titleContainerInGame {
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 50px;
+    background-color: #ffffff;
+}
+
+.mainTitleInGame {
+    font-family: "Bangers", system-ui;
+    font-weight: 900;
+    font-size: large;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 340px;
+    text-overflow: ellipsis;
+}
+
+.mortalInGame {
+    color: #780606;
+}
+
+.subTitleInGame {
+    font-family: "Kenia", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: medium;
+}
+
+
+
+.titleContainer {
+    margin-top: 25%;
+}
+
+.mainTitle {
+    font-family: "Bangers", system-ui;
+    font-weight: 900;
+    font-size: xxx-large;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 340px;
+    text-overflow: ellipsis;
+}
+
+.mortal {
+    color: #780606;
+}
+
+.subTitle {
+    font-family: "Kenia", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.mainMenuContainer {
+    margin-top: 30%;
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*First button medium*/
+.playButton {
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #e3ca6cff ;
+    border: 0px;
+    border-radius: 4px;
+    width: 10rem;
+    height: 3rem;
+    color: #000;
+    margin: 1%;
+}
+.playButton:hover {
+    background: #FFDB58;
+    border: 2px solid #FFDB58;
+}
+
+.howToButton {
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #4D6D8C ;
+    border: 0px;
+    border-radius: 4px;
+    width: 10rem;
+    height: 3rem;
+    color: #FFFFFF;
+    margin: 1%;
+}
+.howToButton:hover {
+    background: #34495E;
+    border: 2px solid #34495E;
+}
+
+.creditsToButton {
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #8a2e2eff;
+    border: 0px;
+    border-radius: 4px;
+    width: 10rem;
+    height: 3rem;
+    color: #FFFFFF;
+    margin: 1%;
+}
+.creditsToButton:hover {
+    background: #780606;
+    border: 2px solid #780606;
+}
+
+
+.bottomLinks {
+    margin: 2% 0;
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footerLinks {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+.bottomLinksInGame {
+    margin: 2% 0;
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footerLinksInGame {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+.imageSelection {
+    width: 100px;
+}
+
+.presidentList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.presidentList li {
+    width: 100px;
+    border: 1px solid #000;
+}
+
+.presidentList input[type="checkbox"]:checked + .image-label {
+    background-color: #f0f0f0; /* Change the background color to indicate selection */
+    border: 10px solid #007bff; /* Add a border to visually highlight the selected image */
+}
+
+/* .presidentList input[type="checkbox"] {
+    display: none; 
+} */
+
+.chooseImage {
+    width: 100px;
+}
+
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.cpuSelections {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectedPresidentContainer {
+    display: flex;
+}
+
+.selectedPresident {
+    margin: 1%;
+}
+
+.cpuSelectionsSubtitleContainer {
+    text-align: center;
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+}
+.userSelectionsSubtitleContainer {
+    text-align: center;
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+}
+
+.goButton {
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #e3ca6cff ;
+    border: 0px;
+    border-radius: 4px;
+    width: 10rem;
+    height: 3rem;
+    color: #000;
+    margin: 1%;
+}
+.goButton:hover {
+    background: #FFDB58;
+    border: 2px solid #FFDB58;
+}
+
+.goButtonContainer {
+    margin: 10% 0% 10% 0%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presidentsAllContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    padding: 1%;
+}
+
+.facingContainer {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.threePresidents {
+    display: flex;
+    flex-direction: column;
+    max-width: 102px;
+}
+
+.player {
+    border: 1px solid #000;
+}
+.playerImage {
+    width: 100px;
+}
+.presidentData {
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.vsContainer {
+    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vsText {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.fightButton {
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #4D6D8C ;
+    border: 0px;
+    border-radius: 4px;
+    width: 6rem;
+    height: 3rem;
+    color: #FFFFFF;
+    margin: 1%;
+}
+.fightButton:hover {
+    border: 2px solid #1d1d1d;
+    color: #FF5252;
+}
+
+.scoreSectionContainer {
+    margin-top: 10%;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    padding: 15%;
+}
+
+.scoreTitle {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: xx-large;
+    margin: 0;
+}
+
+.scoresContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.score {
+    max-width: 100px;
+    margin: 10% 0;
+}
+
+.winner {
+    max-width: 100%;
+    margin: 15% 15% 0% ;
+}
+
+.winnerText {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: xx-large;
+    color: #780606;
+}
+
+.againButton {
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #8a2e2eff;
+    border: 0px;
+    border-radius: 4px;
+    width: 10rem;
+    height: 3rem;
+    color: #FFFFFF;
+    margin: 1%;
+}
+.againButton:hover {
+    background: #780606;
+    border: 2px solid #780606;
+}
+

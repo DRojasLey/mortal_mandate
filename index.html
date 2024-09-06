@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Kenia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <span class="body" id="firstScreenContainer">
+        <header class="titleContainer" id="titleContainer">
+            <h1 class="mainTitle" id="mainTitle">Mandato <span class="mortal" id="mortal">Mortal</span></h1>
+            <h3 class="subTitle" id="subTitle">La Lucha del Poder</h3>
+        </header>
+        <span class="body" id="firstScreenContainer">
+            <section class="mainMenuContainer" id="mainMenuContainer">
+                <button class="playButton" id="playButton">JUGAR</button>
+                <button class="howToButton" id="howToButton">INSTRUCCIONES</button>
+                <button class="creditsToButton" id="creditsToButton">CREDITOS</button>
+            </section>
+        </span>
+        
+        <!-- GAME SECTIONS MUST BE HIDDEN INITIALL -->
+        <span class="body" id="secondScreenContainer">
+            <section class="gameContainer" id="gameContainer">
+                <!-- CPU SELECTIONS -->
+                <section class="cpuSelections" id="cpuSelections">
+                    <div class="cpuSelectionsSubtitleContainer" id="cpuSelectionsSubtitleContainer">
+                        <h4 class="cpuSelectionsSubtitle">Seleccion Iluminati</h4>
+                    </div>
+                    <!-- images -->
+                    <section class="selectedPresidentContainer" id="selectedPresidentContainer">
+                        <div class="selectedPresident" id="selectedPresident1Cpu">
+                            <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
+                            <img class="imageSelection" id="selectedPresident1CpuImage" src="./resources/images/selection-placeholder.png" alt="president one">
+                        </div>
+                        <div class="selectedPresident" id="selectedPresident2Cpu">
+                            <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
+                            <img class="imageSelection" id="selectedPresident2CpuImage" src="./resources/images/selection-placeholder.png" alt="president one">
+                        </div>
+                        <div class="selectedPresident" id="selectedPresident3Cpu">
+                            <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
+                            <img class="imageSelection" id="selectedPresident3CpuImage" src="./resources/images/selection-placeholder.png" alt="president one">
+                        </div>
+                    </section>
+                </section>
+                <!-- USER SELECTIONS -->
+                <section class="userSelections" id="userSelections">
+                    <div class="userSelectionsSubtitleContainer" id="userSelectionsSubtitleContainer">
+                        <h4 class="userSelectionsSubtitle">Tu seleccion</h4>
+                    </div>
+                    <!-- images -->
+                    <section class="selectedPresidentContainer" id="selectedPresidentContainer">
+                        <div class="selectedPresident" id="selectedPresident1User">
+                            <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
+                            <img class="imageSelection" id="selectedPresident1UserImage" src="./resources/images/selection-placeholder.png" alt="president one">
+                        </div>
+                        <div class="selectedPresident" id="selectedPresident2User">
+                            <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
+                            <img class="imageSelection" id="selectedPresident2UserImage" src="./resources/images/selection-placeholder.png" alt="president one">
+                        </div>
+                        <div class="selectedPresident" id="selectedPresident2User">
+                            <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
+                            <img class="imageSelection" id="selectedPresident2UserImage" src="./resources/images/selection-placeholder.png" alt="president one">
+                        </div>
+                    </section>
+                </section>
+            </section>
+            <section class="goButtonContainer" id="goButtonContainer">
+                <button class="goButton" id="goButton">LISTO!</button>
+            </section>
+            <section class="presidentsAllContainer" id="presidentsAllContainer">
+                <!-- TODO: this should be a list that we can style similar to how the list is styled on https://m.fanfox.net/ -->
+                <!-- List should be generated and add imgs values and name -->
+                <ul class="presidentList" id="presidentList">
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                    <li>
+                        <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
+                        <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    </li>
+                </ul>
+            </section>
+        </span>
+        
+        <span class="body" id="thirdScreenContainer">
+            <section class="facingContainer" id="facingContainer">
+                <span class="threePresidents" id="cpuPresidents">
+                    <section class="player" id="cpuPlayer1">
+                        <img class="playerImage" id="cpuPlayerImage1" src="./resources/images/selection-placeholder.png" alt="">
+                        <h4 class="presidentData" id="cpuPresidentName1">Nombre Apellido</h4>
+                        <h4 class="presidentData" id="cpuPresidentScore1">__745__</h4>
+                    </section>
+                    <section class="player" id="cpuPlayer2">
+                        <img class="playerImage" id="cpuPlayerImage2" src="./resources/images/selection-placeholder.png" alt="">
+                        <h4 class="presidentData" id="cpuPresidentName2">Nombre Apellido</h4>
+                        <h4 class="presidentData" id="cpuPresidentScore2">__745__</h4>
+                    </section>
+                    <section class="player" id="cpuPlayer3">
+                        <img class="playerImage" id="cpuPlayerImage3" src="./resources/images/selection-placeholder.png" alt="">
+                        <h4 class="presidentData" id="cpuPresidentName3">Nombre Apellido</h4>
+                        <h4 class="presidentData" id="cpuPresidentScore3">__745__</h4>
+                    </section>
+                </span>
+                <section class="vsContainer" style="color: brown;">
+                    <h2 class="vsText">VS</h2>
+                    <!-- facingContainer end -->
+                    <section class="fightButtonContainer">
+                        <button class="fightButton" id="fightButton">PELEA!</button>
+                    </section>
+                    <!-- Fight button end -->
+                </section>
+                <span class="threePresidents" id="userPresidents">
+                    <section class="player" id="userPlayer1">
+                        <img class="playerImage" id="userPlayerImage1" src="./resources/images/selection-placeholder.png" alt="">
+                        <h4 class="presidentData" id="userPresidentName1">Nombre Apellido</h4>
+                        <h4 class="presidentData" id="userPresidentScore1">__745__</h4>
+                    </section>
+                    <section class="player" id="userPlayer2">
+                        <img class="playerImage" id="userPlayerImage2" src="./resources/images/selection-placeholder.png" alt="">
+                        <h4 class="presidentData" id="userPresidentName2">Nombre Apellido</h4>
+                        <h4 class="presidentData" id="userPresidentScore2">__745__</h4>
+                    </section>
+                    <section class="player" id="userPlayer3">
+                        <img class="playerImage" id="userPlayerImage3" src="./resources/images/selection-placeholder.png" alt="">
+                        <h4 class="presidentData" id="userPresidentName3">Nombre Apellido</h4>
+                        <h4 class="presidentData" id="userPresidentScore3">__745__</h4>
+                    </section>
+                </span>
+            </section>
+        </span>
+        
+        <span class="body" id="fourthScreenContainer">
+            <section class="winner">
+                <h2 class="winnerText">GANO EL MAL!</h2>
+            </section>
+            <section class="againButtonContainer">
+                <button class="againButton" id="againButton">OTRA!</button>
+            </section>
+            <section class="scoreSectionContainer">
+                <h2 class="scoreTitle" >PUNTUACION</h2>
+                <div class="scoresContainer">
+                    <div class="score">
+                        <p class="presidentData">Tu </p>
+                        <p class="presidentData" id="userScore">2235</p>
+                    </div>
+                    <div class="score">
+                        <p class="presidentData">Iluminati</p>
+                        <p class="presidentData" id="cpuScore">2235</p>
+                    </div>
+                </div>
+            </section>
+        </span>
+        <footer class="bottomLinks" id="bottomLinks">
+            <ul class="footerLinks" id="footerLinks">
+                <li><a href="github.com">Repo</a></li>
+                <li><a href="./index.html">Home</a></li>
+            </ul>
+        </footer>
+        <script src="main.js" type="js"></script>
+        <script src="functions.js" type="js"></script>
+    </span>
+</body>
+</html>
