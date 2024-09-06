@@ -1,4 +1,4 @@
-# Project 5 -  Mortal Mandate  - v0.1.0
+# Project 5 -  Mortal Mandate  - v0.2.0
 
 ## Async & documentation showdown
 
@@ -20,18 +20,23 @@ The arena is open, select your favorite Colombian presidents to face the ilumina
 1. Throw them into the arena.
 1. Get your battle results.
 
-### Version 0.1.0 notes:
+### Version 0.2.0 notes:
 
-- HTML and CSS added.
-- visual bugs connections.
-- Typo correction.
+* [x] HTML and CSS added.
+* [x] visual bugs corrections.
+* [x] Typo correction.
+* [x] Main menu navigation logic
+* [x] CPU selection logic
 
 ### Coming up
+* [ ] User selection logic
+* [ ] Game logic
+* [ ] Responsive update
 
-- Main menu logic
-- Game logic
-- Responsive update
+### Known issues:
 
+* [Missing images from some presidents](https://github.com/Mteheran/api-colombia/issues/117) (Report on API-Colombia GitHub)
+* Some presidents do not have images at all, (2 presidents have "" as images, 2 presidents "null" all fours are excluded from the pool)
 
 ### Credits
 
