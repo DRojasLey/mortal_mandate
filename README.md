@@ -1,4 +1,4 @@
-# Project 5 -  Mortal Mandate
+# Project 5 -  Mortal Mandate  - v0.1.0
 
 ## Async & documentation showdown
 
@@ -7,7 +7,7 @@
 
 ### What is happening
 
-The Iluminati have amassed a big president army, it is up to you to stop them, youu can do so by fighting fire with fire!
+The Iluminati have amassed a big president army, it is up to you to stop them, you can do so by fighting fire with fire!
 
 The arena is open, select your favorite Colombian presidents to face the iluminati.
 
@@ -20,7 +20,19 @@ The arena is open, select your favorite Colombian presidents to face the ilumina
 1. Throw them into the arena.
 1. Get your battle results.
 
+### Version 0.1.0 notes:
 
-### Credits 
+- HTML and CSS added.
+- visual bugs connections.
+- Typo correction.
+
+### Coming up
+
+- Main menu logic
+- Game logic
+- Responsive update
+
+
+### Credits
 
 This project uses the data from [The API-Colombia Team](https://api-colombia.com/)
