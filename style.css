@@ -263,6 +263,11 @@ a {
 
 .chooseImage {
     width: 100px;
+    height: 150px;
+}
+
+.chooseBox{
+
 }
 
 .gameContainer {
@@ -324,6 +329,21 @@ a {
     justify-content: center;
     align-items: center;
 }
+
+.loadingContainer h2 {
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
 
 .presidentsAllContainer {
     display: flex;
@@ -412,7 +432,8 @@ a {
     font-style: normal;
     text-align: center;
     font-size: xx-large;
-    margin: 0;
+    margin: 5% 0;
+
 }
 
 .scoresContainer {

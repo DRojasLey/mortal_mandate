@@ -80,15 +80,12 @@
                 <!-- images -->
                 <section class="selectedPresidentContainer" id="selectedPresidentContainer1">
                     <div class="selectedPresident" id="selectedPresidentCpu1">
-                        <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
                         <img class="imageSelection" id="selectedPresidentCpuImage1" src="./resources/images/selection-placeholder.png" alt="president one">
                     </div>
                     <div class="selectedPresident" id="selectedPresidentCpu2">
-                        <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
                         <img class="imageSelection" id="selectedPresidentCpuImage2" src="./resources/images/selection-placeholder.png" alt="president one">
                     </div>
                     <div class="selectedPresident" id="selectedPresidentCpu3">
-                        <!-- TODO: THIS-SRC-SHOULD-BE-ADDED-FROM-THE-PRESIDENT-SELECTION -->
                         <img class="imageSelection" id="selectedPresidentCpuImage3" src="./resources/images/selection-placeholder.png" alt="president one">
                     </div>
                 </section>
@@ -115,50 +112,23 @@
                 </section>
             </section>
         </section>
-        <section class="goButtonContainer" id="goButtonContainer">
-            <button class="goButton" id="goButton">LISTO!</button>
+        <section class="loadingContainer" id="loadingContainer">
+            <h2>Cargando...</h2>
+        </section>
+        <section class="chooseTittle" id="chooseTittle">
+            <h2 class="scoreTitle">Elige los contendientes:</h2>
         </section>
         <section class="presidentsAllContainer" id="presidentsAllContainer">
-            <!-- TODO: this should be a list that we can style similar to how the list is styled on https://m.fanfox.net/ -->
-            <!-- List should be generated and add imgs values and name -->
+            <!-- TODO: Generate list automagicaly -->
             <ul class="presidentList" id="presidentList">
-                <li>
+                <li id="presidentPlaceholder">
                     <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
-                </li>
-                <li>
-                    <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
-                </li>
-                <li>
-                    <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
-                </li>
-                <li>
-                    <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
-                </li>
-                <li>
-                    <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
-                </li>
-                <li>
-                    <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
-                </li>
-                <li>
-                    <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
-                </li>
-                <li>
-                    <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
-                </li>
-                <li>
-                    <label for="president1"><img class="chooseImage" src="./resources/images/selection-placeholder.png" alt="President 1"></label>
-                    <input type="checkbox" class="chooseImage" id="president1" name="president" value="1">
+                    <input type="checkbox" class="chooseImage" id="president1" name="selectablePresidents" value="1">
                 </li>
             </ul>
+        </section>
+        <section class="goButtonContainer" id="goButtonContainer">
+            <button class="goButton" id="goButton">LISTO!</button>
         </section>
     </section>
     <!-- ARENA SECTION -->

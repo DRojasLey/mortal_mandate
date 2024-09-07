@@ -42,20 +42,43 @@ playButton.addEventListener('click', () => {
         dataPresidents = data;
         filterNoImage(dataPresidents);
         generateCpuPlayers(dataPresidents);
-        extractImages(cpuSelection);
-        assignImagesToPlayers(cpuImages, cpuPlayersSelection);
-        //TODO: create all 48 selectable president miniatures
+        cpuImages = extractImages(cpuSelection);
+        assignImagesToPlayers(cpuImages, cpuPlayersSelectionElements);
+        //TODO: create all selectable president miniatures:
+        getAvailablePlayers(dataPresidents, cpuSelection);
+        availablePresidentsImages = extractImages(availablePresidentsNoBroken);
+        createNewListElement(availablePresidentsNoBroken);
+        setGoButton(1, availablePresidentsNoBroken);
         //TODO: assign user selection miniatures
     });
-    goButton.addEventListener('click', ()=>{
-        arenaCall();
-    });
+    
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function arenaCall() {
     hideSections(secondScreen);
     unhideSection(thirdScreen);
-    assignImagesToPlayers(cpuImages, cpuPlayersArena);
+    assignImagesToPlayers(cpuImages, cpuPlayersArenaImage);
     //TODO: assign user selection miniatures from previous selection
     //TODO: calculate values of the presidents
     fightButton.addEventListener('click', ()=>{

@@ -30,17 +30,41 @@ const cpuPlayerImage1 = document.getElementById('cpuPlayerImage1')
 const cpuPlayerImage2 = document.getElementById('cpuPlayerImage2')
 const cpuPlayerImage3 = document.getElementById('cpuPlayerImage3')
 /**DOM  User selection */
+/**user selection 1 */
 const selectedPresidentContainerUser = document.getElementById('selectedPresidentContainer2');
 const selectedPresidentUser1 = document.getElementById('selectedPresidentUser1');
 const selectedPresidentUser2 = document.getElementById('selectedPresidentUser2');
 const selectedPresidentUser3 = document.getElementById('selectedPresidentUser3');
+const selectedPresidentUserImage1 = document.getElementById('selectedPresidentUserImage1');
+const selectedPresidentUserImage2 = document.getElementById('selectedPresidentUserImage2');
+const selectedPresidentUserImage3 = document.getElementById('selectedPresidentUserImage3');
+
+
+/**DOM loading placeholder */
+const loadingMessage = document.getElementById('loadingContainer')
+
+/**DOM Available presidents list */
+const presidentList = document.getElementById('presidentList');
+const presidentPlaceholder = document.getElementById('presidentPlaceholder');
+
+
+
 
 /** Variable Declarations*/
 let dataPresidents = [];
 let cpuSelection = [];
-let cpuPlayersSelection = [selectedPresidentCpuImage1, selectedPresidentCpuImage2, selectedPresidentCpuImage3];
-let cpuPlayersArena = [cpuPlayerImage1, cpuPlayerImage2, cpuPlayerImage3];
+let cpuPlayersSelectionElements = [selectedPresidentCpuImage1, selectedPresidentCpuImage2, selectedPresidentCpuImage3];
+let cpuPlayersArenaImage = [cpuPlayerImage1, cpuPlayerImage2, cpuPlayerImage3];
 let cpuImages = [];
 let userSelection = [];
+let userSelectionImages =[ "./resources/images/selection-placeholder.png", "./resources/images/selection-placeholder.png"];
+let userSelectionObjects = [];
 let userImages = [];
 let userPlayersSelection = [selectedPresidentUser1, selectedPresidentUser2, selectedPresidentUser3];
+let userPlayersSelectionImage = [selectedPresidentUserImage1, selectedPresidentUserImage2,selectedPresidentUserImage3]
+let availablePresidents = [];
+let availablePresidentsNoDups = [];
+let availablePresidentsNoBroken = [];
+let availablePresidentsImages= [];
+
+
