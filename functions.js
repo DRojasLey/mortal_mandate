@@ -248,30 +248,30 @@ function extractObjectByID(id, availablePresiArray) {
 };
 
 function setGoButton( currentPresidentsdata ) {
-        if ( actionCounter === 1 ){
-            goButton.innerText = 'SIGUIENTE';
-            goButton.addEventListener('click', () => {
-                nextButtonAction( currentPresidentsdata )
-            });
-        } else if (actionCounter === 2) {
-            goButton.removeEventListenerEventListener('click', () => {
-                nextButtonAction( currentPresidentsdata )
-            });
-            goButton.innerText = 'SIGUIENTE';
-            goButton.addEventListener('click', () => {
-                nextButtonAction( currentPresidentsdata )
-            });
-        } else if (actionCounter === 3) {
-            goButton.removeEventListener('click', () => {
-                nextButtonAction( currentPresidentsdata )
-            });
-            goButton.innerText = 'LISTO!';
-            goButton.addEventListener('click', () => {
-                arenaCall();
+    if ( actionCounter === 1 ){
+        goButton.innerText = 'SIGUIENTE';
+        goButton.addEventListener('click', () => {
+            nextButtonAction( currentPresidentsdata )
         });
-        } else {
-            console.log(`setGoButton was called incorrectly, the actionCounter is: ${actionCounter}`);
-        }
+    } else if (actionCounter === 2) {
+        goButton.removeEventListenerEventListener('click', () => {
+            nextButtonAction( currentPresidentsdata )
+        });
+        goButton.innerText = 'SIGUIENTE';
+        goButton.addEventListener('click', () => {
+            nextButtonAction( currentPresidentsdata )
+        });
+    } else if (actionCounter === 3) {
+        goButton.removeEventListener('click', () => {
+            nextButtonAction( currentPresidentsdata )
+        });
+        goButton.innerText = 'LISTO!';
+        goButton.addEventListener('click', () => {
+            arenaCall();
+    });
+    } else {
+        console.log(`setGoButton was called incorrectly, the actionCounter is: ${actionCounter}`);
+    }
 };
 
 function nextButtonAction( currentPresidentsdata1 ){
