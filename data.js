@@ -53,7 +53,7 @@ const presidentPlaceholder = document.getElementById('presidentPlaceholder');
 /** Variable Declarations*/
 let cpuPlayersDOM = [selectedPresidentCpuImage1, selectedPresidentCpuImage2, selectedPresidentCpuImage3];
 let cpuPlayersArenaImage = [cpuPlayerImage1, cpuPlayerImage2, cpuPlayerImage3];
-let userSelection = []; 
+let userSelection = [];
 let userImages = [];
 let userPlayersSelectionImage = [selectedPresidentUserImage1, selectedPresidentUserImage2,selectedPresidentUserImage3]
 
