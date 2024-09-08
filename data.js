@@ -51,20 +51,10 @@ const presidentPlaceholder = document.getElementById('presidentPlaceholder');
 
 
 /** Variable Declarations*/
-let dataPresidents = [];
-let cpuSelection = [];
-let cpuPlayersSelectionElements = [selectedPresidentCpuImage1, selectedPresidentCpuImage2, selectedPresidentCpuImage3];
+let cpuPlayersDOM = [selectedPresidentCpuImage1, selectedPresidentCpuImage2, selectedPresidentCpuImage3];
 let cpuPlayersArenaImage = [cpuPlayerImage1, cpuPlayerImage2, cpuPlayerImage3];
-let cpuImages = [];
-let userSelection = [];
-let userSelectionImages =[ "./resources/images/selection-placeholder.png", "./resources/images/selection-placeholder.png"];
-let userSelectionObjects = [];
+let userSelection = []; 
 let userImages = [];
-let userPlayersSelection = [selectedPresidentUser1, selectedPresidentUser2, selectedPresidentUser3];
 let userPlayersSelectionImage = [selectedPresidentUserImage1, selectedPresidentUserImage2,selectedPresidentUserImage3]
-let availablePresidents = [];
-let availablePresidentsNoDups = [];
-let availablePresidentsNoBroken = [];
-let availablePresidentsImages= [];
 
-
+let actionCounter = 0;

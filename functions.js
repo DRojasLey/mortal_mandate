@@ -1,3 +1,7 @@
+
+
+
+
 /**Hide all non essential sections
 * @param {string} section name of the section to hide from the page
 */
@@ -30,15 +34,59 @@ const getAllPresidents = async () => {
     return data;
 };
 
+
+//DATA FILTERING BLOCK
 /**filter only presidents that have images
 * @param {array} array to filter
-* @returns undefined
+* @returns array with objects
 * will filter given array and reassign dataPresidents for only image holders
 */
 function filterNoImage(array) {
     const noimagenull = array.filter(obj => obj.image !== "null" && obj.image !== "");
-    dataPresidents = noimagenull;
+    return noimagenull
 };
+/**Filters the duplicate objects from the array
+    *
+    * @param {Array} availablePresidents
+    */
+function filterDuplicates(availablePresidents) {
+    const seen = new Set();
+    let availablePresidentsNoDups = [];
+    for (const obj of availablePresidents) {
+        const key = `${obj.name}-${obj.lastName}`;
+        if (!seen.has(key)) {
+            seen.add(key);
+            availablePresidentsNoDups.push(obj);
+        }
+    }
+    return availablePresidentsNoDups;
+}
+/**Filters the known broken images
+    *
+    * @param {Array} objects presidents list
+    */
+function filterBrokenImages(objects) {
+    let availablePresidentsNoBroken = [];
+    for (const obj of objects) {
+        if ((obj.name !== "Guillermo Leon" && obj.lastName !== "Valencia")) {
+            if (obj.name !== "Diego Euclides" && obj.lastName !== "De Angulo Lemos"){
+                availablePresidentsNoBroken.push(obj);
+            }
+        }
+    }
+    return availablePresidentsNoBroken;
+}
+/**removes duplicates and broken images
+ * @param {array} filteredPlayerList 
+ * @returns filtered array of objects
+ */
+function filterData(filteredPlayerList) {
+    let availablePresidents = filteredPlayerList;
+    availablePresidents = filterDuplicates(availablePresidents);
+    availablePresidents = filterBrokenImages(availablePresidents);
+    return availablePresidents
+};
+//DATA FIlTERING BLOCK END
 
 
 /**Get random number
@@ -59,22 +107,24 @@ function getRandomPresident(arrayb) {
 }
 
 /**Generate CPU players
-    * @param {array} arrayc valid presidents array
+    * @param {Array} arrayc valid presidents array
     * @returns undefined
     * Adds 3 elements to the CPU selection
     */
 function generateCpuPlayers(arrayc) {
-        for (let index = 0; index < 3; index++) {
-            let newPresi;
-            do {
-                newPresi = getRandomPresident(arrayc);
-            } while (cpuSelection.includes(newPresi));
-            cpuSelection.push(newPresi);
-        }
+    let cpuSelectionInternal = [];
+    for (let index = 0; index < 3; index++) {
+        let newPresi;
+        do {
+            newPresi = getRandomPresident(arrayc);
+        } while (cpuSelectionInternal.includes(newPresi));
+        cpuSelectionInternal.push(newPresi);
+    }
+    return cpuSelectionInternal;
 }
 
 /**extract images from an array with objects that contain the 'image' key
-    * @param {array} selectionArray array with objects to extract images
+    * @param {Array} selectionArray array with objects to extract images
     * @returns undefined
     * reassigns the cpuImages variable
     */
@@ -94,78 +144,42 @@ function extractImages(selectionArray) {
     * it will mutate the DOM elements to add images
     */
 function assignImagesToPlayers(urlsArray, playersArray) {
-        for (let i = 0; i < urlsArray.length; i++) {
-            playersArray[i].src = urlsArray[i];
-        }
-}
-
-/**Filters the duplicate objects from the array
-    *
-    * @param {Array} availablePresidents
-    */
-function filterDuplicates(availablePresidents) {
-        const seen = new Set();
-        for (const obj of availablePresidents) {
-            const key = `${obj.name}-${obj.lastName}`;
-            if (!seen.has(key)) {
-                seen.add(key);
-                availablePresidentsNoDups.push(obj);
-            }
-        }
-}
-
-/**Filters the known broken images
-    *
-    * @param {Array} objects presidents list
-    */
-function filterBrokenImages(objects) {
-        for (const obj of objects) {
-            if ((obj.name !== "Guillermo Leon" && obj.lastName !== "Valencia")) {
-                if (obj.name !== "Diego Euclides" && obj.lastName !== "De Angulo Lemos"){
-                    availablePresidentsNoBroken.push(obj);
-                }
-            }
-        }
-}
-
-/** Will add objects to the available Presidents array
-    *
-    * @param {Array} filteredPlayerList all active presidents that have image links
-    * @param {Array} cpuSelectionList  previously generated CPU selections
-    * @returns undefined
-    */
-function getAvailablePlayers(filteredPlayerList, cpuSelectionList) {
-        for (const element of filteredPlayerList) {
-            if (!cpuSelectionList.includes(element)) {
-                availablePresidents.push(element);
-            }
-        }
-        filterDuplicates(availablePresidents);
-        filterBrokenImages(availablePresidentsNoDups);
+    for (let i = 0; i < urlsArray.length; i++) {
+        playersArray[i].src = urlsArray[i];
+    }
 };
 
-function filterByID(id, arrayD) {
-        availablePresidents = [];
-        for (const meObject of arrayD){
-            console.log(`id: ${typeof +id}, presiID: ${typeof meObject.id}`)
-            if (meObject.id !== (+id)){
-                availablePresidents.push(meObject)
-            }
+/** Gets array of players not selected by CPU
+ *
+ * @param {Array} filteredPlayerList
+ * @param {Array} cpuSelectionList
+ * @returns array of objects
+ */
+function getAvailablePlayers(filteredPlayerList, cpuSelectionList){
+    let availablePresidentsInternal = [];
+    for (const element of filteredPlayerList) {
+        if (!cpuSelectionList.includes(element)) {
+            availablePresidentsInternal.push(element);
         }
-};
+    }
+    return availablePresidentsInternal;
+}
 
 /**creates li elements for each element in an array
  * adds event listeners to each element
  * @param {array} availablePresidentsArrayA  
  */
 function createNewListElement(availablePresidentsArrayA) {
-    console.log(availablePresidentsArrayA);
-    
+    actionCounter++
+
     if (presidentList.childElementCount !== 0) {
         do {
             presidentList.removeChild(presidentList.lastChild);
         } while (presidentList.hasChildNodes());
     }
+    let availablePresidentsImages= [];
+    availablePresidentsImages = extractImages(availablePresidentsArrayA);
+    //
     availablePresidentsArrayA.forEach((element, index) => {
         /**Remove the empty placeholder */
         presidentPlaceholder.remove();
@@ -188,8 +202,9 @@ function createNewListElement(availablePresidentsArrayA) {
         newInput.setAttribute('id', `president${index}`);
         newInput.setAttribute('name', 'selectablePresidents');
         newInput.setAttribute('value', element.id);
+        /* Setting the event listeners */
         newInput.addEventListener('change', ()=>{
-            executeSelection()
+            executeSelection(availablePresidentsArrayA);
         });
         /**TODO: ADD EVENT LISTENERS TO THE CHECKBOXES */
         /**Append the elements to the list */
@@ -199,62 +214,100 @@ function createNewListElement(availablePresidentsArrayA) {
     });
 };
 
-function setGoButton(number, currentPresidentsdata) {
-        if (number = 1 ){
+function executeSelection(availablePresidentsArrA) {
+    const firstChecked = document.querySelector('.chooseBox:checked');
+    if ( actionCounter <= 1 ){
+        userSelection[0] = extractObjectByID(firstChecked.value, availablePresidentsArrA);
+        setGoButton(availablePresidentsArrA);
+    } else if ( actionCounter === 2 ){
+        userSelection[1] = extractObjectByID(firstChecked.value, availablePresidentsArrA);
+        setGoButton (availablePresidentsArrA);
+    } else if ( actionCounter === 3 ){
+        userSelection[2] = extractObjectByID(firstChecked.value, availablePresidentsArrA);
+
+    } else {
+        console.log(`error! ${userSelection.length} not valid amount of numbers in the useSelection array`)
+    }
+    console.log(userSelection)
+};
+
+/** get object from the selection
+ *
+ * @param {number} id ()
+ * @param {Array} availablePresiArray
+ * @returns object corresponding to the given id
+ */
+function extractObjectByID(id, availablePresiArray) {
+    for (const meObject of availablePresiArray){
+        if (meObject.id === (+id)){
+            return meObject;
+        } else {
+            console.log('object is not the id, moving to next object')
+        };
+    };
+};
+
+function setGoButton( currentPresidentsdata ) {
+        if ( actionCounter === 1 ){
             goButton.innerText = 'SIGUIENTE';
             goButton.addEventListener('click', () => {
-                filterByID(userSelection[0], currentPresidentsdata)
-                createNewListElement(availablePresidents)
-                
-            })
-        } else if (number === 2) {
-            goButton.removeEventListener('click', () => {
-                createNewListElement(currentPresidentsdata)
-            })
+                nextButtonAction( currentPresidentsdata )
+            });
+        } else if (actionCounter === 2) {
+            goButton.removeEventListenerEventListener('click', () => {
+                nextButtonAction( currentPresidentsdata )
+            });
+            goButton.innerText = 'SIGUIENTE';
             goButton.addEventListener('click', () => {
-                createNewListElement(currentPresidentsdata)
-            })
-        } else if (number === 3) {
-            goButton.innerText = 'LISTO!'
-        }
-};
-
-function extractObjectByID(id) {
-        for (const meObject of availablePresidents){
-            if (meObject.id === (+id)){
-                userSelectionObjects.push(meObject)
-            }
-        }
-};
-
-function extractImageFromSingleObject(object){
-
-};
-
-function userSelectionAddImage(actionNumber){
-        if (actionNumber === 1){
-            extractObjectByID(userSelection[0])
-            
-            assignImagesToPlayers(userSelectionImages, userPlayersSelectionImage);
-        } else if (actionNumber === 2){
-            
-        }else if (actionNumber === 3){
-            
-        }
-};
-
-function executeSelection() {
-        const firstChecked = document.querySelector('.chooseBox:checked');
-        if (userSelection.length <= 1 ){
-            userSelection[0] = firstChecked.value
-            userSelectionAddImage(1);
-        } else if (userSelection.length === 2 ){
-            userSelection[1] = firstChecked.value
-        } else if (userSelection.length === 3 ){
-            userSelection[2] = firstChecked.value
+                nextButtonAction( currentPresidentsdata )
+            });
+        } else if (actionCounter === 3) {
+            goButton.removeEventListener('click', () => {
+                nextButtonAction( currentPresidentsdata )
+            });
+            goButton.innerText = 'LISTO!';
+            goButton.addEventListener('click', () => {
+                arenaCall();
+        });
         } else {
-            console.log(`error! ${userSelection.length} not valid amount of numbers in the useSelection array`)
+            console.log(`setGoButton was called incorrectly, the actionCounter is: ${actionCounter}`);
         }
-        console.log(userSelection)
 };
 
+function nextButtonAction( currentPresidentsdata1 ){
+    let updatedPresidents = [];
+    if ( actionCounter === 1 ){
+        userPlayersSelectionImage[0].src = userSelection[0].image;
+        updatedPresidents = filterByID( userSelection[0].id , currentPresidentsdata1 );
+        createNewListElement(updatedPresidents);
+    } else if ( actionCounter === 2 ) {
+        userPlayersSelectionImage[1].src = userSelection[1].image
+        updatedPresidents = filterByID( userSelection[1].id , currentPresidentsdata1 );
+        createNewListElement(updatedPresidents);
+    } else if ( actionCounter > 2 ){
+        console.log('nextButtonAction shouldn`t be called more than 2 times' );
+    } else {
+        console.log(`Next Button action was called incorrectly while action counter was: ${actionCounter}`);
+    };
+};
+
+
+
+
+
+
+/** removes the object with 'id' from the array
+ *
+ * @param {number} id
+ * @param {array} arrayD
+ * @returns array without id element
+ */
+function filterByID(id, arrayD) {
+    let availablePresidentsFilter = [];
+    for (const meObject of arrayD){
+        if (meObject.id !== (+id)){
+            availablePresidentsFilter.push(meObject)
+        }
+    }
+    return availablePresidentsFilter
+};

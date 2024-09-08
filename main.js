@@ -39,38 +39,23 @@ playButton.addEventListener('click', () => {
     convertTitle();
     unhideSection(secondScreen);
     getAllPresidents().then(data=> {
+        let dataPresidents = [];
+        let cpuSelection = [];
+        let cpuImages = [];
+        let availablePresis = [];
+
         dataPresidents = data;
-        filterNoImage(dataPresidents);
-        generateCpuPlayers(dataPresidents);
+        dataPresidents = filterNoImage(dataPresidents);
+        dataPresidents = filterData(dataPresidents);
+        cpuSelection = generateCpuPlayers(dataPresidents);
         cpuImages = extractImages(cpuSelection);
-        assignImagesToPlayers(cpuImages, cpuPlayersSelectionElements);
-        //TODO: create all selectable president miniatures:
-        getAvailablePlayers(dataPresidents, cpuSelection);
-        availablePresidentsImages = extractImages(availablePresidentsNoBroken);
-        createNewListElement(availablePresidentsNoBroken);
-        setGoButton(1, availablePresidentsNoBroken);
+        assignImagesToPlayers(cpuImages, cpuPlayersDOM);
+        availablePresis = getAvailablePlayers(dataPresidents, cpuSelection);
+        createNewListElement(availablePresis);
         //TODO: assign user selection miniatures
     });
-    
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
