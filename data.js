@@ -57,4 +57,3 @@ let userSelection = [];
 let userImages = [];
 let userPlayersSelectionImage = [selectedPresidentUserImage1, selectedPresidentUserImage2,selectedPresidentUserImage3]
 
-let actionCounter = 0;

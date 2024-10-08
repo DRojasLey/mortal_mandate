@@ -165,20 +165,33 @@ function getAvailablePlayers(filteredPlayerList, cpuSelectionList){
     return availablePresidentsInternal;
 }
 
-/**creates li elements for each element in an array
- * adds event listeners to each element
- * @param {array} availablePresidentsArrayA  
+/**
+ * removes the previous president list when called 
  */
-function createNewListElement(availablePresidentsArrayA) {
-    actionCounter++
-
+function removePreviousPresidents() {
     if (presidentList.childElementCount !== 0) {
         do {
             presidentList.removeChild(presidentList.lastChild);
         } while (presidentList.hasChildNodes());
     }
-    let availablePresidentsImages= [];
-    availablePresidentsImages = extractImages(availablePresidentsArrayA);
+};
+
+
+
+
+/**
+ * creates li elements for each element in an array
+ * adds event listeners to each element
+ * @param {array} availablePresidentsArrayA
+ */
+function createNewListElement(availablePresidentsArrayA, actionCounter) {
+
+    actionCounter++
+
+    removePreviousPresidents();
+
+    // let availablePresidentsImages= [];
+    // availablePresidentsImages = extractImages(availablePresidentsArrayA);
     //
     availablePresidentsArrayA.forEach((element, index) => {
         /**Remove the empty placeholder */
@@ -204,34 +217,47 @@ function createNewListElement(availablePresidentsArrayA) {
         newInput.setAttribute('value', element.id);
         /* Setting the event listeners */
         newInput.addEventListener('change', ()=>{
-            executeSelection(availablePresidentsArrayA);
+            executeSelection(availablePresidentsArrayA, actionCounter);
         });
-        /**TODO: ADD EVENT LISTENERS TO THE CHECKBOXES */
         /**Append the elements to the list */
         presidentList.appendChild(newLi);
         /**Remove the loading */
         loadingMessage.remove();
     });
+
+    if (userSelection.length === 3){
+        removePreviousPresidents();
+    }
+
 };
 
-function executeSelection(availablePresidentsArrA) {
+/**
+ * Sets the user selection by adding the selected president to the user selection array, 
+ * and then calls the setGoButton to set the button action
+ * @param {array} availablePresidentsArrA current available presidents array
+ * @param {number} actionCounter
+ */
+function executeSelection(availablePresidentsArrA, actionCounter) {
     const firstChecked = document.querySelector('.chooseBox:checked');
-    if ( actionCounter <= 1 ){
+    if ( actionCounter === 1 ){
         userSelection[0] = extractObjectByID(firstChecked.value, availablePresidentsArrA);
-        setGoButton(availablePresidentsArrA);
+        setGoButton(availablePresidentsArrA, actionCounter);
     } else if ( actionCounter === 2 ){
         userSelection[1] = extractObjectByID(firstChecked.value, availablePresidentsArrA);
-        setGoButton (availablePresidentsArrA);
+        setGoButton (availablePresidentsArrA, actionCounter);
     } else if ( actionCounter === 3 ){
         userSelection[2] = extractObjectByID(firstChecked.value, availablePresidentsArrA);
+        setGoButton(availablePresidentsArrA, actionCounter);
+        userPlayersSelectionImage[2].src = userSelection[2].image;
+        console.log(userSelection)
 
     } else {
         console.log(`error! ${userSelection.length} not valid amount of numbers in the useSelection array`)
     }
-    console.log(userSelection)
 };
 
-/** get object from the selection
+/**
+ * Get object from the selection
  *
  * @param {number} id ()
  * @param {Array} availablePresiArray
@@ -242,29 +268,35 @@ function extractObjectByID(id, availablePresiArray) {
         if (meObject.id === (+id)){
             return meObject;
         } else {
-            console.log('object is not the id, moving to next object')
+            console.log('finding the object...')
         };
     };
 };
 
-function setGoButton( currentPresidentsdata ) {
+/**
+ * Sets event listeners for the next button during the president selection screen
+ * @param {array} currentPresidentsdata current available presidents array
+ * @param {number} actionCounter
+ */
+function setGoButton( currentPresidentsdata, actionCounter ) {
+    if (goButton.addEventListener) {
+        // Remove the event listener if it exists
+        goButton.removeEventListener('click', () => {
+            nextButtonAction( currentPresidentsdata, actionCounter );
+        });
+    }
     if ( actionCounter === 1 ){
         goButton.innerText = 'SIGUIENTE';
         goButton.addEventListener('click', () => {
-            nextButtonAction( currentPresidentsdata )
+            nextButtonAction( currentPresidentsdata, actionCounter )
         });
     } else if (actionCounter === 2) {
-        goButton.removeEventListenerEventListener('click', () => {
-            nextButtonAction( currentPresidentsdata )
-        });
         goButton.innerText = 'SIGUIENTE';
         goButton.addEventListener('click', () => {
-            nextButtonAction( currentPresidentsdata )
+            nextButtonAction( currentPresidentsdata, actionCounter )
         });
     } else if (actionCounter === 3) {
-        goButton.removeEventListener('click', () => {
-            nextButtonAction( currentPresidentsdata )
-        });
+        console.log(`actionCounter: ${actionCounter} reported from setGoButton case3`)
         goButton.innerText = 'LISTO!';
         goButton.addEventListener('click', () => {
             arenaCall();
@@ -274,29 +306,31 @@ function setGoButton( currentPresidentsdata ) {
     }
 };
 
-function nextButtonAction( currentPresidentsdata1 ){
+/**
+ * Sets the action when the next button is pressed
+ * @param {array} currentPresidentsdata1 current available presidents array
+ * @param {number} actionCounter
+ */
+function nextButtonAction( currentPresidentsdata1, actionCounter ){
     let updatedPresidents = [];
-    if ( actionCounter === 1 ){
+    if ( actionCounter === 1  ){
         userPlayersSelectionImage[0].src = userSelection[0].image;
         updatedPresidents = filterByID( userSelection[0].id , currentPresidentsdata1 );
-        createNewListElement(updatedPresidents);
+        createNewListElement(updatedPresidents, actionCounter);
     } else if ( actionCounter === 2 ) {
         userPlayersSelectionImage[1].src = userSelection[1].image
         updatedPresidents = filterByID( userSelection[1].id , currentPresidentsdata1 );
-        createNewListElement(updatedPresidents);
-    } else if ( actionCounter > 2 ){
-        console.log('nextButtonAction shouldn`t be called more than 2 times' );
+        createNewListElement(updatedPresidents, actionCounter);
+    } else if ( actionCounter > 3 ){
+        console.log('nextButtonAction shouldn`t be called more than 4 times' );
+        console.log(`current userSelection is ${userSelection}`)
     } else {
         console.log(`Next Button action was called incorrectly while action counter was: ${actionCounter}`);
     };
 };
 
-
-
-
-
-
-/** removes the object with 'id' from the array
+/**
+ * removes the object with 'id' from the array
  *
  * @param {number} id
  * @param {array} arrayD

@@ -43,6 +43,7 @@ playButton.addEventListener('click', () => {
         let cpuSelection = [];
         let cpuImages = [];
         let availablePresis = [];
+        let actionCounter = 0;
 
         dataPresidents = data;
         dataPresidents = filterNoImage(dataPresidents);
@@ -51,7 +52,7 @@ playButton.addEventListener('click', () => {
         cpuImages = extractImages(cpuSelection);
         assignImagesToPlayers(cpuImages, cpuPlayersDOM);
         availablePresis = getAvailablePlayers(dataPresidents, cpuSelection);
-        createNewListElement(availablePresis);
+        createNewListElement(availablePresis, actionCounter);
         //TODO: assign user selection miniatures
     });
 
