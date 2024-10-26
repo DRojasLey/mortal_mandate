@@ -155,11 +155,26 @@ function extractNames(selectionArray) {
         return namesArray
     }, []);
     return completeName;
-}
+};
 
 function assignNamesToPlayers(namesArray, playersArray) {
     for (let i = 0; i < namesArray.length; i++) {
         playersArray[i].innerText = namesArray[i];
+    }
+};
+
+function calculatePoints(selectionArray) {
+    const playerPoints = selectionArray.reduce((pointsArray, objectB) => {
+        pointsArray.push(objectB.description.length)
+        return pointsArray
+    }, []);
+    return playerPoints
+
+};
+
+function assignPointsToPlayers(pointsArray, playersArray) {
+    for (let i = 0; i < pointsArray.length; i++) {
+        playersArray[i].innerText = pointsArray[i];
     }
 };
 
@@ -177,7 +192,7 @@ function getAvailablePlayers(filteredPlayerList, cpuSelectionList){
         }
     }
     return availablePresidentsInternal;
-}
+};
 
 /**
  * removes the previous president list when called 
@@ -356,4 +371,5 @@ function filterByID(id, arrayD) {
     }
     return availablePresidentsFilter
 };
+
 

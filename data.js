@@ -32,6 +32,9 @@ const cpuPlayerImage3 = document.getElementById('cpuPlayerImage3')
 const cpuPresidentName1 = document.getElementById('cpuPresidentName1');
 const cpuPresidentName2 = document.getElementById('cpuPresidentName2');
 const cpuPresidentName3 = document.getElementById('cpuPresidentName3');
+const cpuPresidentScore1 = document.getElementById('cpuPresidentScore1')
+const cpuPresidentScore2 = document.getElementById('cpuPresidentScore2')
+const cpuPresidentScore3 = document.getElementById('cpuPresidentScore3')
 
 /**DOM  User selection */
 /**user selection 1 */
@@ -49,6 +52,10 @@ const userPlayerImage3 = document.getElementById('userPlayerImage3');
 const userPresidentName1 = document.getElementById('userPresidentName1');
 const userPresidentName2 = document.getElementById('userPresidentName2');
 const userPresidentName3 = document.getElementById('userPresidentName3');
+const userPresidentScore1 = document.getElementById('userPresidentScore1')
+const userPresidentScore2 = document.getElementById('userPresidentScore2')
+const userPresidentScore3 = document.getElementById('userPresidentScore3')
+
 
 /**DOM loading placeholder */
 const loadingMessage = document.getElementById('loadingContainer')
@@ -67,11 +74,16 @@ let cpuSelection = [];
 let cpuImages = [];
 let cpuNames = [];
 let cpuArenaNames = [cpuPresidentName1, cpuPresidentName2, cpuPresidentName3];
+let cpuPoints = []
+let cpuArenaPoints = [cpuPresidentScore1, cpuPresidentScore2, cpuPresidentScore3]
 let userSelection = [];
 let userImages = [];
 let userPlayersSelectionImage = [selectedPresidentUserImage1, selectedPresidentUserImage2,selectedPresidentUserImage3]
 let userPlayersArenaImage = [userPlayerImage1, userPlayerImage2, userPlayerImage3]
 let userNames = []
 let userArenaNames = [userPresidentName1, userPresidentName2, userPresidentName3];
+let userPoints = []
+let userArenaPoints = [userPresidentScore1, userPresidentScore2, userPresidentScore3]
+
 
 
