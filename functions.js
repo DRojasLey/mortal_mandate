@@ -149,6 +149,10 @@ function assignImagesToPlayers(urlsArray, playersArray) {
     }
 };
 
+function assignDataToPlayers(urlsArray){
+
+};
+
 /** Gets array of players not selected by CPU
  *
  * @param {Array} filteredPlayerList
@@ -175,9 +179,6 @@ function removePreviousPresidents() {
         } while (presidentList.hasChildNodes());
     }
 };
-
-
-
 
 /**
  * creates li elements for each element in an array
@@ -345,3 +346,4 @@ function filterByID(id, arrayD) {
     }
     return availablePresidentsFilter
 };
+

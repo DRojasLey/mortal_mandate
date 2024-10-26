@@ -40,8 +40,8 @@ playButton.addEventListener('click', () => {
     unhideSection(secondScreen);
     getAllPresidents().then(data=> {
         let dataPresidents = [];
-        let cpuSelection = [];
-        let cpuImages = [];
+        cpuSelection = [];
+        cpuImages = [];
         let availablePresis = [];
         let actionCounter = 0;
 
@@ -65,7 +65,9 @@ function arenaCall() {
     hideSections(secondScreen);
     unhideSection(thirdScreen);
     assignImagesToPlayers(cpuImages, cpuPlayersArenaImage);
-    //TODO: assign user selection miniatures from previous selection
+    userImages = extractImages(userSelection);
+    assignImagesToPlayers(userImages, userPlayersArenaImage);
+
     //TODO: calculate values of the presidents
     fightButton.addEventListener('click', ()=>{
         fightCall();
