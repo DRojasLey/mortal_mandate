@@ -29,6 +29,10 @@ const selectedPresidentCpuImage3 = document.getElementById('selectedPresidentCpu
 const cpuPlayerImage1 = document.getElementById('cpuPlayerImage1')
 const cpuPlayerImage2 = document.getElementById('cpuPlayerImage2')
 const cpuPlayerImage3 = document.getElementById('cpuPlayerImage3')
+const cpuPresidentName1 = document.getElementById('cpuPresidentName1');
+const cpuPresidentName2 = document.getElementById('cpuPresidentName2');
+const cpuPresidentName3 = document.getElementById('cpuPresidentName3');
+
 /**DOM  User selection */
 /**user selection 1 */
 const selectedPresidentContainerUser = document.getElementById('selectedPresidentContainer2');
@@ -42,6 +46,9 @@ const selectedPresidentUserImage3 = document.getElementById('selectedPresidentUs
 const userPlayerImage1 = document.getElementById('userPlayerImage1');
 const userPlayerImage2 = document.getElementById('userPlayerImage2');
 const userPlayerImage3 = document.getElementById('userPlayerImage3');
+const userPresidentName1 = document.getElementById('userPresidentName1');
+const userPresidentName2 = document.getElementById('userPresidentName2');
+const userPresidentName3 = document.getElementById('userPresidentName3');
 
 /**DOM loading placeholder */
 const loadingMessage = document.getElementById('loadingContainer')
@@ -56,9 +63,15 @@ const presidentPlaceholder = document.getElementById('presidentPlaceholder');
 /** Variable Declarations*/
 let cpuPlayersDOM = [selectedPresidentCpuImage1, selectedPresidentCpuImage2, selectedPresidentCpuImage3];
 let cpuPlayersArenaImage = [cpuPlayerImage1, cpuPlayerImage2, cpuPlayerImage3];
+let cpuSelection = [];
+let cpuImages = [];
+let cpuNames = [];
+let cpuArenaNames = [cpuPresidentName1, cpuPresidentName2, cpuPresidentName3];
 let userSelection = [];
 let userImages = [];
 let userPlayersSelectionImage = [selectedPresidentUserImage1, selectedPresidentUserImage2,selectedPresidentUserImage3]
 let userPlayersArenaImage = [userPlayerImage1, userPlayerImage2, userPlayerImage3]
-let cpuSelection = [];
-let cpuImages = [];
+let userNames = []
+let userArenaNames = [userPresidentName1, userPresidentName2, userPresidentName3];
+
+

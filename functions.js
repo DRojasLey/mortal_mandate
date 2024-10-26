@@ -129,11 +129,11 @@ function generateCpuPlayers(arrayc) {
     * reassigns the cpuImages variable
     */
 function extractImages(selectionArray) {
-        let onlyImages = selectionArray.reduce((imagesArray, objectA) => {
-            imagesArray.push(objectA.image);
-            return imagesArray
-        }, []);
-        return onlyImages;
+    let onlyImages = selectionArray.reduce((imagesArray, objectA) => {
+        imagesArray.push(objectA.image);
+        return imagesArray
+    }, []);
+    return onlyImages;
 };
 
 /**Assigns images to each element of a given array based on other array
@@ -149,8 +149,18 @@ function assignImagesToPlayers(urlsArray, playersArray) {
     }
 };
 
-function assignDataToPlayers(urlsArray){
+function extractNames(selectionArray) {
+    let completeName = selectionArray.reduce((namesArray, objectA) => {
+        namesArray.push(`${objectA.name} \n ${objectA.lastName}` );
+        return namesArray
+    }, []);
+    return completeName;
+}
 
+function assignNamesToPlayers(namesArray, playersArray) {
+    for (let i = 0; i < namesArray.length; i++) {
+        playersArray[i].innerText = namesArray[i];
+    }
 };
 
 /** Gets array of players not selected by CPU

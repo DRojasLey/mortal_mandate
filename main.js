@@ -67,6 +67,11 @@ function arenaCall() {
     assignImagesToPlayers(cpuImages, cpuPlayersArenaImage);
     userImages = extractImages(userSelection);
     assignImagesToPlayers(userImages, userPlayersArenaImage);
+    cpuNames = extractNames(cpuSelection)
+    userNames = extractNames(userSelection)
+    console.log(cpuNames)
+    assignNamesToPlayers(cpuNames, cpuArenaNames)
+    assignNamesToPlayers(userNames, userArenaNames)
 
     //TODO: calculate values of the presidents
     fightButton.addEventListener('click', ()=>{
