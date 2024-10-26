@@ -46,9 +46,6 @@ a {
     text-overflow: ellipsis;
 }
 
-.mortalInGame {
-    color: #780606;
-}
 
 .subTitleInGame {
     font-family: "Kenia", sans-serif;
@@ -57,7 +54,6 @@ a {
     text-align: center;
     font-size: medium;
 }
-
 
 
 .titleContainer {
@@ -152,6 +148,54 @@ a {
     border: 2px solid #780606;
 }
 
+.instructionsContainer {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 5% 0 5%;
+    padding: 5%;
+}
+
+.instructionsText{
+    margin: 2% 0;
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: medium;
+    text-align: center;
+    text-wrap: balance;
+    margin: 4%;
+}
+
+.instructionsSubtitle {
+    font-family: "Bangers", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
+
+}
+
+.backButton {
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #4D6D8C ;
+    border: 0px;
+    border-radius: 4px;
+    width: 10rem;
+    height: 3rem;
+    color: #FFFFFF;
+    margin: 1%;
+}
+.backButton:hover {
+    background: #34495E;
+    border: 2px solid #34495E;
+}
 
 .bottomLinks {
     margin: 2% 0;
@@ -187,6 +231,12 @@ a {
 
 .imageSelection {
     width: 100px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-items: center;
 }
 
 .presidentList {
@@ -213,6 +263,11 @@ a {
 
 .chooseImage {
     width: 100px;
+    height: 150px;
+}
+
+.chooseBox{
+
 }
 
 .gameContainer {
@@ -275,6 +330,21 @@ a {
     align-items: center;
 }
 
+.loadingContainer h2 {
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
 .presidentsAllContainer {
     display: flex;
     flex-direction: row;
@@ -303,6 +373,7 @@ a {
 }
 .playerImage {
     width: 100px;
+    height: 150px;
 }
 .presidentData {
     font-family: "Libre Franklin", sans-serif;
@@ -362,7 +433,8 @@ a {
     font-style: normal;
     text-align: center;
     font-size: xx-large;
-    margin: 0;
+    margin: 5% 0;
+
 }
 
 .scoresContainer {
