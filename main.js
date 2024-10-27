@@ -71,8 +71,8 @@ function arenaCall() {
     userNames = extractNames(userSelection)
     assignNamesToPlayers(cpuNames, cpuArenaNames)
     assignNamesToPlayers(userNames, userArenaNames)
-    cpuPoints = calculatePoints(cpuSelection)
-    userPoints = calculatePoints(userSelection)
+    cpuPoints = calculatePoints(cpuSelection, 'cpu')
+    userPoints = calculatePoints(userSelection, 'user')
     assignPointsToPlayers(cpuPoints, cpuArenaPoints)
     assignPointsToPlayers(userPoints, userArenaPoints)
     fightButton.addEventListener('click', ()=>{
@@ -84,6 +84,7 @@ function fightCall() {
     hideSections(thirdScreen);
     unhideSection(fourthScreen);
     //TODO: calculate winner
+    calculateWinner();
     //TODO: update final score report
     againButton.addEventListener('click', ()=>{
         window.location.reload();

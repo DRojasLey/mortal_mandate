@@ -84,6 +84,6 @@ let userNames = []
 let userArenaNames = [userPresidentName1, userPresidentName2, userPresidentName3];
 let userPoints = []
 let userArenaPoints = [userPresidentScore1, userPresidentScore2, userPresidentScore3]
-
+let teamsPoints = {"cpuPoints": 0, "userPoints": 0};
 
 

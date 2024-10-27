@@ -163,9 +163,12 @@ function assignNamesToPlayers(namesArray, playersArray) {
     }
 };
 
-function calculatePoints(selectionArray) {
+function calculatePoints(selectionArray, type) {
     const playerPoints = selectionArray.reduce((pointsArray, objectB) => {
-        pointsArray.push(objectB.description.length)
+        let currentPlayerPoint= objectB.description.length
+        pointsArray.push(currentPlayerPoint)
+        if (type === 'cpu') teamsPoints.cpuPoints += currentPlayerPoint;
+        if (type === 'user') teamsPoints.userPoints += currentPlayerPoint;
         return pointsArray
     }, []);
     return playerPoints
@@ -175,6 +178,18 @@ function calculatePoints(selectionArray) {
 function assignPointsToPlayers(pointsArray, playersArray) {
     for (let i = 0; i < pointsArray.length; i++) {
         playersArray[i].innerText = pointsArray[i];
+    }
+};
+
+function calculateWinner() {
+    if (teamsPoints.cpuPoints > teamsPoints.userPoints){
+        console.log('gano el mal indeed')
+    } else if (teamsPoints.cpuPoints < teamsPoints.userPoints){
+        console.log('gano el bien')
+    } else if (teamsPoints.cpuPoints === teamsPoints.userPoints && teamsPoints.cpuPoints && teamsPoints.userPoints) {
+        console.log('Empate de poder')
+    } else {
+        console.log('incorrect call to the calculateWinner, or the teamsPoints does not include data')
     }
 };
 
