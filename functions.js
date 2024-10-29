@@ -183,14 +183,16 @@ function assignPointsToPlayers(pointsArray, playersArray) {
 
 function calculateWinner() {
     if (teamsPoints.cpuPoints > teamsPoints.userPoints){
-        console.log('gano el mal indeed')
+        winnerText.innerText = `GANAN LOS ILUMINATI!`
     } else if (teamsPoints.cpuPoints < teamsPoints.userPoints){
-        console.log('gano el bien')
+        winnerText.innerText = `TU GANAS!!`
     } else if (teamsPoints.cpuPoints === teamsPoints.userPoints && teamsPoints.cpuPoints && teamsPoints.userPoints) {
-        console.log('Empate de poder')
+        winnerText.innerText = `EMPATE!`
     } else {
         console.log('incorrect call to the calculateWinner, or the teamsPoints does not include data')
     }
+    userScore.innerText = teamsPoints.userPoints
+    cpuScore.innerText = teamsPoints.cpuPoints
 };
 
 /** Gets array of players not selected by CPU
@@ -386,5 +388,7 @@ function filterByID(id, arrayD) {
     }
     return availablePresidentsFilter
 };
+
+
 
 

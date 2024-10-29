@@ -1,4 +1,4 @@
-# Project 5 -  Mortal Mandate  - v0.4.0
+# Project 5 -  Mortal Mandate  - v1.0.0
 
 ## Async & documentation showdown
 
@@ -42,8 +42,12 @@ The arena is open, select your favorite Colombian presidents to face the ilumina
 #### Version 0.4.0:
 * [X] Arena now shows the necessary data of each president
 
+#### Version 1.0.0:
+* [X] first game version, completed
+* [x] Game logic
+
 ### Coming up
-* [ ] Game logic
+
 * [ ] Responsive update
 
 ### Known issues:

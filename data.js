@@ -55,7 +55,10 @@ const userPresidentName3 = document.getElementById('userPresidentName3');
 const userPresidentScore1 = document.getElementById('userPresidentScore1')
 const userPresidentScore2 = document.getElementById('userPresidentScore2')
 const userPresidentScore3 = document.getElementById('userPresidentScore3')
-
+/** figth conclusion */
+const winnerText = document.querySelector('.winnerText')
+const userScore = document.getElementById('userScore')
+const cpuScore = document.getElementById('cpuScore')
 
 /**DOM loading placeholder */
 const loadingMessage = document.getElementById('loadingContainer')
